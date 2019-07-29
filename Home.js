@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Horizontal from './components/Horizontal';
+import Login from './components/Login';
 
 export default class Home extends React.Component {
 	render() {
 		return(
 			<View style={styles.container}>
-				<Horizontal />
+				<Login />
 			</View>
 		);
 	}
@@ -15,6 +16,7 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',  
 	},
