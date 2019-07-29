@@ -7,6 +7,10 @@ const a = createStackNavigator({
   Home: {
     screen: HomeScreen
   }
+}, {
+	defaultNavigationOptions: {
+		header: null,
+	}
 });
 
 const AppContainer = createAppContainer(a);
