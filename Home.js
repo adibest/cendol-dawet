@@ -1,12 +1,20 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import Superman from './components/Superman';
+import Red from './components/Red';
+import Blue from './components/Blue';
+import Green from './components/Green';
 
 export default class Home extends React.Component {
 	render() {
 		return(
+
 			<View style={styles.container}>
-				<Text>hahahaha</Text>
+				<Red />
+				<Blue />
+				<Green />
 			</View>
+
 		);
 	}
 }
@@ -14,7 +22,8 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: '#fff',
+		justifyContent: 'center', 
 		alignItems: 'center',
-		justifyContent: 'center',  
 	},
 });
