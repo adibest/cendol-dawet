@@ -1,32 +1,64 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import Navbar from './components/Navbar';
-import Tabbar from './components/Tabbar';
-import Body from './components/Body';
+import { StyleSheet, Text, View } from 'react-native';
+import { FlatList } from 'react-native';
+import { Card } from 'react-native-elements';
 
-import data from './components/search.json';
+const data = [
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 1"
+	},
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 2"
+	},
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 3"
+	},
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 4"
+	},
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 5"
+	},
+	{
+		imageUrl: "http://via.placeholder.com/160x160",
+		title: "something 6"
+	},
+];
 
 export default class Home extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: data
+		};
+	}
+
 	render() {
 		return(
-			<View style={styles.container}>
-				<Navbar />
-				<ScrollView>
-				<Body video={data.items[0]} />
-				<Body video={data.items[1]} />
-				<Body video={data.items[2]} />
-				<Body video={data.items[3]} />
-				<Body video={data.items[4]} />
-				</ScrollView>
-				<Tabbar />
-			</View>
+			<FlatList
+				horizontal
+				data={this.state.data}
+				renderItem={ ({item: rowData}) => {
+						return(
+							<Card
+								style={{height: 200}}
+								title={null}
+								image={{url: rowData.imageUrl}}
+								containerStyle={{padding: 0, width: 160, height: 200, marginTop: 150}}
+							>
+								<Text style={{marginBottom: 10}}>{rowData.title}</Text>
+							</Card>
+						);
+					}
+				}
+				keyExtractor={(item, index) => index }
+			/>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-	},
-});
