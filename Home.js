@@ -1,14 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import HeaderCustom from './components/HeaderCustom';
-import SwipeCard from './components/SwipeCard';
+import ChatList from './components/ChatList';
 
 export default class Home extends React.Component {
 	render() {
 		return(
 			<View style={styles.container}>
-				<HeaderCustom />
-				<SwipeCard />
+				<ChatList />
 			</View>
 		);
 	}
